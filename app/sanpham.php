@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class sanpham extends Model
 {
 	 protected $table='sanpham';
 
-    protected $fillable=['tensanpham','id_loaisanpham','mota','dongia','donvi','hinhanh'];
-    public $timestamps= false;
+    protected $fillable=['id_loaisanpham','tensanpham','mota','dongia','donvi','hinhanh','giakhuyenmai','new','chitiet'];
+    
     //
     public function loaisanpham(){
     	return $this->belongsTo('App\loaisanpham','id_loaisanpham','id');

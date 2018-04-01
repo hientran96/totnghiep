@@ -1,6 +1,7 @@
 
 CKEDITOR.editorConfig = function( config )
 {
+    config.enterMode = CKEDITOR.ENTER_BR;
         // Define changes to default configuration here. For example:
     config.language = 'en';
     
@@ -25,6 +26,7 @@ CKEDITOR.editorConfig = function( config )
         
         config.entities = false;
         //config.entities_latin = false;
+
         
 
         config.filebrowserBrowseUrl = 'http://localhost/fckeditor/ckfinder/ckfinder.html';

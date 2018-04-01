@@ -17,4 +17,8 @@ class chitiethoadon extends Model
 
     	return $this->belongsTo('App\sanpham','id_sanpham','id');
     }
+    public function khachhang()
+    {
+    	return $this->BelongsToMany('App\khachhang','App\hoadon','id_hoadon','id_sanpham','id');
+    }
 }

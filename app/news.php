@@ -8,7 +8,7 @@ class news extends Model
 {
 	 protected $table='news';
 
-    protected $fillable=['tieude','noidung','hinhanh'];
-    public $timestamps= false;
+    protected $fillable=['tieude','tomtat','noidung','hinhanh'];
+    // public $timestamps= false;
     //
 }

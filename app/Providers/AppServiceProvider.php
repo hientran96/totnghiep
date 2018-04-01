@@ -15,19 +15,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()-> composer('header',function($view){
+        view()-> composer(['header','page.dathang'],function($view){
             $loaisanpham= loaisanpham::all();
-          
+        
             $view->with('loaisanpham',$loaisanpham);
         });
         view()->composer('header',function($view){
-              if(Session('cart'))
-            {
-                $oldcart= Session::get('cart');
-                $cart = new Cart($oldcart);
-                $view->with(['cart'=>Session::get('cart'),'sanphamtronggio'=>$cart->items,'tongtien'=>$cart->tongtien,'tongsoluong'=>$cart->tongsoluong]);
-            }
+              if(session('cart')){
+            $oldcart=session::get('cart');
+            $cart=new Cart($oldcart);
+        
+            $view->with(['cart'=>session::get('cart'),'sanphamtronggio'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+          }
         });
+        
 
     }
 
